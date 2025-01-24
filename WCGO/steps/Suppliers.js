@@ -254,56 +254,42 @@ When('การดูรายละเอียดข้อมูล Suppliers'
     await page.click('text="ยืนยัน"');
 });
 
-When('การแก้ไขรายละเอียดข้อมูล Suppliers', async function () {
-    //แก้ไขรายละเอียดยานพาหนะ
+When('การแก้ไขข้อมูลเพิ่มรถ Suppliers', async function () {
     await page.click('svg[data-testid="EditIcon"]');
-    await page.click('svg[data-testid="EditIcon"]');
-    page.waitForTimeout(50);
-    await page.fill('input[placeholder="เลขเครื่องยนต์"]', '205984');
-    page.waitForTimeout(50);
-    await page.fill('input[placeholder="ยี่ห้อยานพาหนะ"]', 'Honda');
-    page.waitForTimeout(50);
-    await page.fill('input[placeholder="เลขทะเบียน"]', 'กก-8795');
-    page.waitForTimeout(50);
-    await page.fill('input[placeholder="รุ่นยานพาหนะ"]', 'City');
-    page.waitForTimeout(50);
-    await page.fill('input[placeholder="kpiการกินน้ำมัน"]', '200');
-    page.waitForTimeout(50);
-    await page.fill('input[placeholder="เลขตัวถัง "]', '25887');
-
-    await page.click('text="Maintenance"');
-
-    await page.click('[title="10w"]');
+    await page.click('text="เพิ่มรถ"');
     await page.waitForTimeout(50);
-    await page.click('[title="4w"]');
-    await page.fill('input[placeholder="น้ำหนัก"]', '50000');
+    await page.click('text="เพิ่ม"');
     await page.waitForTimeout(50);
-    await page.fill('input[placeholder="กว้าง"]', '2000');
-    await page.waitForTimeout(50);
-    await page.fill('input[placeholder="ยาว"]', '2000');
-    await page.waitForTimeout(50);
-    await page.fill('input[placeholder="สูง"]', '2000');
-    await page.click('text="บันทึก"');
     await page.click('text="ยืนยัน"');
+    await page.waitForTimeout(50);
+    await page.click('text="ตกลง"');
+    await page.waitForTimeout(50);
+    await page.fill('input[placeholder="เลขเครื่องยนต์"]', '133746');
+    await page.waitForTimeout(50);
+    await page.fill('input[placeholder="ยี่ห้อยานพาหนะ"]', 'Honda');
+    await page.waitForTimeout(50);
+    await page.fill('input[placeholder="เลขทะเบียน"]', 'ขม-3223');
+    await page.waitForTimeout(50);
+    await page.click('#basic2_vi_pro_id');
+    await page.click('text="อ่างทอง"');
+    await page.waitForTimeout(50);
+    await page.fill('input[placeholder="รุ่นยานพาหนะ"]', 'City');
+    await page.waitForTimeout(50);
+    await page.fill('input[placeholder="kpiการกินน้ำมัน"]', '30');
+    await page.waitForTimeout(50);
+    await page.fill('input[placeholder="เลขตัวถัง "]', '33786');
+    await page.waitForTimeout(50);
+    await page.fill('input[placeholder="ประกันภัย "]', 'AIA');
+    await page.waitForTimeout(50);
+    await page.fill('input[placeholder="ทุนประกันรถ"]', '10000');
+    await page.waitForTimeout(50);
+    await page.click('text="Acitve"');
+    await page.waitForTimeout(50);
 });
 
-When('การแก้ไขเอกสารและรูปข้อมูลรถ Suppliers', async function () {
-    // การอัพโหลดรูป ดู ลบ และแก้ไข
-    await page.click('[title="Preview file"]');
-    await page.waitForTimeout(50);
-    await page.click('button.ant-image-preview-close');
-    await page.waitForTimeout(50);
-    await page.click('.ant-btn-icon');
-    await page.waitForTimeout(50);
-    const fileInput7 = await page.waitForSelector('#Upload_รูปยานพาหนะ', { state: 'attached' });
-    await fileInput7.setInputFiles(img);
-    await page.waitForTimeout(50);  // รอให้การอัพโหลดเสร็จ
-
-    // อัพโหลดไฟล์เอกสารลบ และเพิ่ม
-    await page.click('[title="store-template.xlsx"]');
-    await page.waitForTimeout(50);
-    await page.click('[title="Remove file"]');
-    const fileInput8 = await page.waitForSelector('#Upload2_เอกสารรถ input[type="file"]', { state: 'attached' });
-    await fileInput8.setInputFiles(file);
-    await page.waitForTimeout(50);  // รอให้การอัพโหลดเสร็จ
+When('ฉันลบข้อมูลยานพาหนะ', async function() {
+  // ลบข้อมูล
+  await page.click('svg[data-testid="DeleteIcon"]');
+  await page.waitForTimeout(500);
+  await page.click('text="ยืนยัน"');
 });

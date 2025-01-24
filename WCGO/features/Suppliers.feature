@@ -37,6 +37,8 @@ Feature: Customers
     And การบันทึกข้อมูล Suppliers
 
     When การดูรายละเอียดข้อมูล Suppliers
-
-    When การแก้ไขรายละเอียดข้อมูล Suppliers
-    And การแก้ไขเอกสารและรูปข้อมูลรถ Suppliers
+    And การแก้ไขข้อมูลเพิ่มรถ Suppliers
+    And การอัปโหลดไฟล์เอกสารข้อมูลรถ Suppliers
+    And การเพิ่มข้อมูลปัจจัยการขนส่งรถ Suppliers
+    And การบันทึกข้อมูล Suppliers
+    And ฉันลบข้อมูลยานพาหนะ
