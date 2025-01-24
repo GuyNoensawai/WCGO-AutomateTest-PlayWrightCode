@@ -1,0 +1,18 @@
+{
+    "default":{
+        "formateOptions":{
+            "snippentInterface": "async-await"
+        },
+        "paths":[
+            "WCGO/features/Suppliers.feature"
+        ],
+        "publishQuite": true,
+        "dryRun": false,
+        "require":[
+            "WCGO/steps/Suppliers.js"
+        ],
+        "format":[
+            "html:cucumber-report.html"
+        ]
+    }
+}
