@@ -2,6 +2,8 @@ const { Given, When, Then, After } = require('@cucumber/cucumber');
 const { chromium } = require('playwright');  
 const { expect } = require('chai'); // เพิ่มการใช้ chai เพื่อการตรวจสอบ  
 const path = require('path');
+const { setDefaultTimeout } = require('@cucumber/cucumber');
+setDefaultTimeout(60 * 1000); // ตั้ง timeout เป็น 60 วินาที
 
 const file = path.join('C:', 'Users', 'Asus', 'Downloads', 'store-template.xlsx');
 
