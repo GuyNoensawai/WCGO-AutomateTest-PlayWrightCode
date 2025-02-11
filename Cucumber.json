@@ -4,12 +4,12 @@
             "snippentInterface": "async-await"
         },
         "paths":[
-            "WCGO/features/Planning (Sales).feature"
+            "WCGO/features/User Group & Permission Management.feature"
         ],
         "publishQuite": true,
         "dryRun": false,
         "require":[
-            "WCGO/steps/Planning (Sales).js"
+            "WCGO/steps/User Group & Permission Management.js"
         ],
         "format":[
             "html:cucumber-report.html"

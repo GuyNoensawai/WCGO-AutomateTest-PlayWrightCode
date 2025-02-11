@@ -59,7 +59,7 @@ When('I search user group {string}', async function (keyword) {
   await page.waitForTimeout(500); // รอผลลัพธ์  
 });
 
-When('I add user group data', async function () {
+When('I add user group data by filling in all data', async function () {
   await page.getByRole('button', { name: 'เพิ่ม' }).click();
   await page.getByPlaceholder('ชื่อกลุ่มผู้ใช้งาน').click();
   await page.getByPlaceholder('ชื่อกลุ่มผู้ใช้งาน').fill('Customer');
@@ -130,4 +130,12 @@ When('I delete user group data', async function () {
   await page.getByPlaceholder('ค้นหา').click();
   await page.getByPlaceholder('ค้นหา').fill('Customers');
   await page.getByRole('button').first().click();
+});
+
+When('I add user group data By filling in only the data that must be filled out', async function () {
+  await page.getByRole('button', { name: 'เพิ่ม' }).click();
+  await page.getByPlaceholder('ชื่อกลุ่มผู้ใช้งาน').click();
+  await page.getByPlaceholder('ชื่อกลุ่มผู้ใช้งาน').fill('Customers');
+  await page.getByRole('button', { name: 'บันทึก' }).click();
+  await page.getByRole('button', { name: 'ยืนยัน' }).click();
 });

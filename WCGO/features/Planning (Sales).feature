@@ -23,7 +23,7 @@ Feature: Planning (Sales)
     And I search sale name "DRIVER_01 driver"
     And I search sale name "   สุณีย์ แผนแยบยล  "
 
-  @focus
+  # @focus
   # การจัดการในเมนู เพิ่ม ดู แก้ไข ลบ โดยกรอกข้อมูลทุกช่อง
   Scenario: Management in the planning (sales) menu by filling in all data
     Given Go to "http://203.154.184.66:3000/auth/signin"  
@@ -41,9 +41,9 @@ Feature: Planning (Sales)
     When I edit planning data
     When I delete planning data
 
-    # @focus
-    # การจัดการในเมนู เพิ่ม ดู แก้ไข ลบ โดยกรอกเฉพาะเมนูที่ต้องกรอกเท่านั้น
-    Scenario: Management in the planning (sales) menu By filling in only the data that must be filled out
+  @focus
+  # การจัดการในเมนู เพิ่ม ดู แก้ไข ลบ โดยกรอกเฉพาะเมนูที่ต้องกรอกเท่านั้น
+  Scenario: Management in the planning (sales) menu By filling in only the data that must be filled out
     Given Go to "http://203.154.184.66:3000/auth/signin"  
     When Enter "new5" And "123"  
     And Press the button "Sign in"  

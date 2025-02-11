@@ -128,9 +128,6 @@ When('I view planning data', async function () {
 });
 
 When('I edit planning data', async function () { 
-  await page.locator('.sc-fa3ff9e8-9').first().click();
-  await page.getByRole('button', { name: 'ยกเลิก' }).click();
-  await page.getByRole('button', { name: 'ยืนยัน' }).click();
   await page.getByTestId('EditIcon').click();
   await page.getByText('2222').click();
   await page.getByText('gg-').click();
@@ -147,6 +144,7 @@ When('I add planning By filling in only the data that must be filled out', async
   await page.getByRole('button', { name: 'เพิ่ม' }).click();
   await page.getByRole('button', { name: 'บันทึก' }).click();
   await page.getByRole('button', { name: 'ยืนยัน' }).click();
+  await page.waitForTimeout(1000);
   await page.getByPlaceholder('Start date').click();
   await page.getByTitle('-02-11').locator('div').click();
   await page.getByTitle('-02-11').locator('div').click();
