@@ -184,7 +184,45 @@ When('I add user data by filling in only all the information', async function ()
   await page.getByRole('button', { name: 'ยืนยัน' }).click();
 });
 
-When('I delete user data', async function () {
+When('I delete user data by filling in only all the information', async function () {
   await page.getByRole('row', { name: '1 ภาคิน ภัทรภร 89774 Bhuvanai' }).getByTestId('DeleteIcon').click();
+  await page.getByRole('button', { name: 'ยืนยัน' }).click();
+});
+
+When('I add user data By filling in only the data that must be filled out', async function () {
+  await page.getByRole('button', { name: 'เพิ่ม' }).click();
+  await page.getByRole('button', { name: 'บันทึก' }).click();
+  await page.getByRole('button', { name: 'ยืนยัน' }).click();
+  await page.getByRole('radio', { name: 'บริษัท' }).check();
+  await page.locator('.ant-select-selection-overflow').click();
+  await page.locator('#basic').getByText('WC.PHAKIN').click();
+  await page.getByLabel('แผนก').click();
+  await page.getByTitle('ขนส่ง').locator('div').click();
+  await page.getByPlaceholder('รหัสพนักงาน').click();
+  await page.getByPlaceholder('รหัสพนักงาน').fill('23375');
+  await page.getByPlaceholder('ชื่อ', { exact: true }).click();
+  await page.getByPlaceholder('ชื่อ', { exact: true }).fill('vinai');
+  await page.getByPlaceholder('นามสกุล').click();
+  await page.getByPlaceholder('นามสกุล').fill('shuseri');
+  await page.getByPlaceholder('Email').click();
+  await page.getByPlaceholder('Email').fill('vinai@gmail.com');
+  await page.getByPlaceholder('รายละเอียดที่อยู่').click();
+  await page.getByPlaceholder('รายละเอียดที่อยู่').fill('77/3 อ.กองดิน อ.แกลง จ.ระยอง 22160');
+  await page.getByLabel('ผ่านทดลองงาน').click();
+  await page.getByText('Today').click();
+  await page.getByRole('button', { name: 'บันทึก' }).click();
+  await page.getByRole('button', { name: 'ยืนยัน' }).click();
+  await page.getByPlaceholder('ชื่อผู้ใช้').click();
+  await page.getByPlaceholder('ชื่อผู้ใช้').fill('vinai');
+  await page.getByPlaceholder('รหัสผ่าน', { exact: true }).click();
+  await page.getByPlaceholder('รหัสผ่าน', { exact: true }).fill('Vinai-12');
+  await page.getByPlaceholder('ยืนยันรหัสผ่าน').click();
+  await page.getByPlaceholder('ยืนยันรหัสผ่าน').fill('Vinai-12');
+  await page.getByRole('button', { name: 'บันทึก' }).click();
+  await page.getByRole('button', { name: 'ยืนยัน' }).click();
+});
+
+When('I delete user data By filling in only the data that must be filled out', async function () {
+  await page.getByRole('row', { name: '1 ภาคิน 23375 vinai' }).getByTestId('DeleteIcon').click();
   await page.getByRole('button', { name: 'ยืนยัน' }).click();
 });
