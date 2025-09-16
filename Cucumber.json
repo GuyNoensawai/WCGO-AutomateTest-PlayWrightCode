@@ -4,12 +4,12 @@
             "snippentInterface": "async-await"
         },
         "paths":[
-            "WCGO/features/Vehicle inspection certificate.feature"
+            "WCGO/features/User Management.feature"
         ],
         "publishQuite": true,
         "dryRun": false,
         "require":[
-            "WCGO/steps/Vehicle inspection certificate.js"
+            "WCGO/steps/User Management.js"
         ],
         "format":[
             "html:cucumber-report.html"

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js test"
+    "test": "cucumber-js test",
+    "test:focus": "npx cucumber-js --tags @focus"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +14,7 @@
   "devDependencies": {
     "@playwright/test": "^1.49.1",
     "@types/node": "^22.10.8",
-    "chai": "^4.3.4"
+    "chai": "^4.5.0"
   },
   "dependencies": {
     "@cucumber/cucumber": "^11.2.0"

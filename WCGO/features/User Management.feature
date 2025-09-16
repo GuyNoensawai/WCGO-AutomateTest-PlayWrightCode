@@ -1,6 +1,6 @@
 Feature: User Management  
 
-  @focus
+  #@focus
   # การค้นหาข้อมูลในเมนู
   Scenario: Searching in the User Management menu
     Given Go to "http://203.154.184.66:3000/auth/signin"  
